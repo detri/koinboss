@@ -34,6 +34,9 @@ export default class CoinView extends React.Component {
             </View>
         )
     }
+}
+
+const styles = {
     coinContainer: {
     margin: 8,
     height: 200,
@@ -61,4 +64,4 @@ export default class CoinView extends React.Component {
       fontSize: 16,
       color: '#fff'
   }
-});
+};
