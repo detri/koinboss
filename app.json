@@ -1,5 +1,16 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "android": {
+      "package": "com.detri.koinboss"
+    },
+    "name": "koinboss",
+    "slug": "koinboss",
+    "version": "0.1.0",
+    "isDetached": true,
+    "detach": {
+      "scheme": "exp14c09cf1aaeb48019582126cad8758e1",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.5.3-sdk27.0.0-408c8d77-8d1f-4784-b7b4-93826250663a.tar.gz"
+    }
   }
 }

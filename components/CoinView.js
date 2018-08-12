@@ -1,4 +1,5 @@
 import React from 'react';
+import BuyButton from './BuyButton.js';
 import { StyleSheet, View, Image, Text } from 'react-native';
 
 export default class CoinView extends React.Component {
@@ -14,29 +15,29 @@ export default class CoinView extends React.Component {
                         <Text style={{ color: '#000', textAlignVertical: 'center' }}>$1,000,000</Text>
                     </View>
                 </View>
-                <View style={[styles.coinRow, { top: -20 }]}>
-                    <Text style={{ color: '#fff', fontSize: 16 }}>Coin market info goes here</Text>
+                <View style={[styles.coinRow, { top: -20, alignItems: 'center', justifyContent: 'space-around' }]}>
+                    <Text style={{ color: '#fff', fontSize: 16, left: 80, top: -20, flex: 2.75 }}>Coin market info goes here</Text>
+                    <View style={{ flex: 1, flexDirection: 'row' }}>
+                        <View style={{ margin: 4, backgroundColor: '#890000', borderRadius: 5, height: 50, flex: 1, top: 18, alignItems: 'center', justifyContent: 'center' }}>
+                            <Text style={{color: '#fff', fontSize: 16}}>Sell</Text>
+                        </View>
+                        <View style={{ margin: 4, backgroundColor: '#ff0000', borderRadius: 5, height: 50, flex: 1, top: 18, left: -2, alignItems: 'center', justifyContent: 'center' }}>
+                            <Text style={{color: '#fff', fontSize: 16}}>All</Text>
+                        </View>
+                    </View>
                 </View>
-                <View style={[styles.coinRow, { justifyContent: 'flex-start', marginRight: 8 }]}>
-                    <View style={[styles.buyButton, {backgroundColor: this.props.coin.colors[0]}]}>
-                        <Text style={styles.buyText}>Buy</Text>
-                    </View>
-                    <View style={[styles.buyButton, {backgroundColor: this.props.coin.colors[0]}]}>
-                        <Text style={styles.buyText}>Buy 10</Text>
-                    </View>
-                    <View style={[styles.buyButton, {backgroundColor: this.props.coin.colors[0]}]}>
-                        <Text style={styles.buyText}>Buy 100</Text>
-                    </View>
-                    <View style={[styles.buyButton, {backgroundColor: this.props.coin.colors[0]}]}>
-                        <Text style={styles.buyText}>Buy Max</Text>
-                    </View>
+                <View style={[styles.coinRow, { justifyContent: 'flex-start', marginRight: 8, flex: 0.5 }]}>
+                    <BuyButton color={this.props.coin.colors[0]}>Buy</BuyButton>
+                    <BuyButton color={this.props.coin.colors[0]}>Buy 10</BuyButton>
+                    <BuyButton color={this.props.coin.colors[0]}>Buy 100</BuyButton>
+                    <BuyButton color={this.props.coin.colors[0]}>Buy Max</BuyButton>
                 </View>
             </View>
         )
     }
 }
 
-const styles = {
+const styles = StyleSheet.create({
     coinContainer: {
     margin: 8,
     height: 200,
@@ -49,19 +50,5 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  buyButton: {
-      width: '100%',
-      height: '100%',
-      flex: 1,
-      marginLeft: 8,
-      borderRadius: 5,
-      marginBottom: 20,
-      justifyContent: 'center',
-      alignItems: 'center'
-  },
-  buyText: {
-      fontSize: 16,
-      color: '#fff'
   }
-};
+});
